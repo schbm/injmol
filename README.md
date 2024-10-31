@@ -18,3 +18,8 @@ conda env export > environment.yml
 ``` sh
 conda env create -f environment.yml
 ```
+
+## Using with ubuntu
+```shell
+source setup_ubuntu.sh
+```
