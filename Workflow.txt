@@ -1,0 +1,46 @@
+Pre-Processing:
+
+1. Daten aus Files laden (mit Pandas read_parquet)
+2. NaN oder None in den Daten bedeutet, dass seit der letzten Messung nichts geändert hat, d.h. durch letzten Messwert ersetzen
+3. Daten visualisieren
+4. Test-Train Split machen (in Projektbeschreibung steht welche Files Test sind)
+5. Zu Ground-Truth Labels ein neues Label "No Maneuver" hinzufügen
+6. Daten in Blöcke einteilen: (Für Test und Train Split)
+    a) Blocksize ist ein Hyperparam und muss selbst gefunden werden
+    b) Mehrere Blöcke dürfen die gleichen Daten haben (d.h. Redundanz erlaubt)
+7. Pro Block:
+    a) High-Level Features extrahieren (Höhe über Boden gem. Projektbeschreibung wichtig, weitere: Average, Std deviation, Min, Max, Median, Frequency domain, ...)
+    b) Am besten möglichst viele Features extrahieren, Feature Selection kann dann später gemacht werden
+8. Daraus ein neues Dataset bauen:
+    a) Eine Zeile pro Block
+    b) Index, High-Level-Features, Ground-Truth Label (siehe Notes 1 für Labels)
+
+
+
+Training:
+
+1. Verschiedene ML-Algorithmen auf neuem Dataset ausprobieren: (siehe Notes 2 für Algorithmen)
+    a) Evtl k-fold Cross Validation/Bootstrapping
+    b) Feature Selection pro Modell
+    c) Resultate visualisieren
+2. Evaluation des besten Modells
+
+
+
+
+
+
+Notes:
+
+1. Since each block represents multiple rows, there are a few common strategies for assigning a label to each block:
+    - Majority Voting: Assign the label that appears most frequently in the rows within the block. This works well if you expect the label distribution within a block to lean heavily toward one class.
+    - Percentage Threshold: Set a threshold, such as 60% or 70%, and assign the block label to the class if that percentage of rows in the block belong to it. If no single class meets the threshold, you might discard that block or assign a "mixed" label.
+    - First/Last Label: Use the label of the first or last row in the block, assuming there's some continuity in the data where labels near each other in time are likely to be the same.
+    - Weighted Labeling: Calculate a weighted average of the labels (if they are numeric or ordinal) or create a probability distribution and assign the block based on the most probable label.
+    - Custom Domain-Based Labeling: If there's domain-specific knowledge (e.g., transitions in activity or events), you could customize the label assignment rule for more accuracy.
+
+2. Mögliche Algorithmen:
+    - LDA/QDA
+    - KNN
+    - Random Forests/Decision Trees
+    - Support Vector Machine
