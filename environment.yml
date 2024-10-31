@@ -29,6 +29,7 @@ dependencies:
   - ca-certificates=2024.9.24=h06a4308_0
   - comm=0.2.1=py312h06a4308_0
   - contourpy=1.2.0=py312hdb19cb5_0
+  - cramjam=2.7.0=py312hb7cc22b_0
   - cycler=0.11.0=pyhd3eb1b0_0
   - cyrus-sasl=2.1.28=h52b45da_1
   - dbus=1.13.18=hb2f20db_0
@@ -36,9 +37,11 @@ dependencies:
   - decorator=5.1.1=pyhd3eb1b0_0
   - executing=0.8.3=pyhd3eb1b0_0
   - expat=2.6.3=h6a678d5_0
+  - fastparquet=2024.2.0=py312ha883a20_0
   - fontconfig=2.14.1=h55d465d_3
   - fonttools=4.51.0=py312h5eee18b_0
   - freetype=2.12.1=h4a9f257_0
+  - fsspec=2024.6.1=py312h06a4308_0
   - gflags=2.2.2=h6a678d5_1
   - glib=2.78.4=h6a678d5_0
   - glib-tools=2.78.4=h6a678d5_0
@@ -142,6 +145,7 @@ dependencies:
   - readline=8.2=h5eee18b_0
   - s2n=1.3.27=hdbd6064_0
   - scipy=1.13.1=py312hc5e2394_0
+  - seaborn=0.13.2=py312h06a4308_0
   - setuptools=75.1.0=py312h06a4308_0
   - sip=6.7.12=py312h6a678d5_0
   - six=1.16.0=pyhd3eb1b0_1
@@ -162,4 +166,4 @@ dependencies:
   - zeromq=4.3.5=h6a678d5_0
   - zlib=1.2.13=h5eee18b_1
   - zstd=1.5.6=hc292b87_0
-prefix: /home/schbm/miniconda3/envs/statml-testat3
+prefix: /home/marcel/miniconda3/envs/statml-testat3
