@@ -1,4 +1,5 @@
 data/
 temp/
 parsed_data/
+parsed_test_data/
 parsed_training_data/
