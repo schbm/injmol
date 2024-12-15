@@ -23,3 +23,5 @@ conda env create -f environment.yml
 ```shell
 source setup_ubuntu.sh
 ```
+
+![Confusion Matrix](conf-mat.png)
