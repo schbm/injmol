@@ -1,4 +1,4 @@
-# statml-testat3
+# Injmol
 
 ## Using conda env
 - numpy
@@ -8,7 +8,7 @@
 
 To add further run `conda install <package>` in the activated environment then reexport the environment.yml. 
 ``` sh
-conda activate statml-testat3
+conda activate injmol
 ```
 ### Exporting
 ``` sh

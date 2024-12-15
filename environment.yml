@@ -1,4 +1,4 @@
-name: statml-testat3
+name: injmol
 channels:
   - defaults
 dependencies:
